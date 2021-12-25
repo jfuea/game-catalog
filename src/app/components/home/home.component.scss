@@ -1,0 +1,52 @@
+.filters {
+    margin: 10px auto;
+    max-width: 1200px;
+    padding-left: 20px;
+}
+
+.game {
+    margin: 10px;
+    width: 280px;
+    height: 330px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: var(--color-primary);
+    transition-duration: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 4px 3px 11px 6px rgb(200 152 200 / 0.5);
+    }
+
+    &-thumbnail {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        height: 172px;
+    }
+
+    &-description {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 158px;
+    }
+
+    &-name {
+        color: var(--color-text);
+        font-weight: 700;
+        font-size: 22px;
+        margin-bottom: 20px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        // overflow: hidden;
+    }
+
+    &-platform {
+        width: 20px;
+    }
+}
