@@ -4,9 +4,17 @@ export interface Game {
     released: string;
     metacritic_url: number;
     website: string;
+    parent_platforms: Array<ParentPlatform>;
 }
 
 export interface APIResponse<T> {
     results: Array<T>
 
+}
+
+export interface ParentPlatform {
+    platform: {
+        name: string;
+        slug: string;
+    }
 }

@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-// import { HttpClient } from "@angular/common/http"; 
+import { HttpClient } from "@angular/common/http"; 
 import { Observable } from 'rxjs';
 import { APIResponse, Game } from '../models';
-
+import { environment as env } from "src/environments/environment";
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
 
-  // constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  // getGameList(
+  getGameList(
 
-  // ): Observable<APIResponse<Game>> {
-  //   return this.http.get<APIResponse<Game>>('https://api.rawg.io/api/games?page_size=10');
-  // }
+  ): Observable<APIResponse<Game>> {
+    return this.http.get<APIResponse<Game>>(`${env.BASE_URL}/games`);
+  }
 }

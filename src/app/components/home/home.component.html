@@ -14,15 +14,21 @@
 </div>
 
 <div class="games">
-    <div class="game">
-        <div class="game-thumb-container">
-            <img src="https://filmdaily.co/wp-content/uploads/2021/07/gta6-lede.jpeg"
-                alt="thumbnail" class="game-thumbnail">
+    <ng-container *ngFor="let game of games">
+        <div class="game">
+            <div class="game-thumb-container">
+                <img *ngIf="game.background_image" src="{{game.background_image}}" alt="thumbnail"
+                    class="game-thumbnail">
+                <p *ngIf="!game.background_image">No image</p>
+            </div>
             <div class="game-description">
-                <p class="game-name">Name</p>
-                <div class="game-platforms"></div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg" alt="game platforms" class="game-platform">
+                <p class="game-name">{{ game.name }}</p>
+                <div class="game-platforms">
+                    <img *ngFor="let gamePlatform of game.parent_platforms"
+                        src="assets/images/platforms/{{gamePlatform.platform.name | lowercase}}.svg"
+                        alt="{{gamePlatform.platform.slug}}" class="game-platform">
+                </div>
             </div>
         </div>
-    </div>
+    </ng-container>
 </div>
