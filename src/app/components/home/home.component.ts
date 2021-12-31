@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { APIResponse, Game } from 'src/app/models';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -52,4 +52,5 @@ export class HomeComponent implements OnInit, OnDestroy {
     openDetails(game: Game) {
         this.router.navigate(['details', game.id]);
     }
+
 }

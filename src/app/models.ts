@@ -3,9 +3,11 @@ export interface Game {
     background_image: string;
     name: string;
     released: string;
-    metacritic_url: number;
+    metacritic_url: string;
     website: string;
     parent_platforms: Array<ParentPlatform>;
+    genres: Array<Genre>;
+    metacritic: number;
 }
 
 export interface APIResponse<T> {
@@ -18,4 +20,10 @@ export interface ParentPlatform {
         name: string;
         slug: string;
     }
+}
+
+export interface Genre {
+    id: number;
+    name: string;
+    slug: string;
 }
