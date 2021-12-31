@@ -15,12 +15,17 @@ import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor'
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
 import { DetailsComponent } from './components/details/details.component';
 import { GaugeModule } from 'angular-gauge';
+import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
+import { MatTabsModule } from "@angular/material/tabs";
+import { MatIconModule } from "@angular/material/icon";
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     HomeComponent,
-    DetailsComponent
+    DetailsComponent,
+    GameTabsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +36,8 @@ import { GaugeModule } from 'angular-gauge';
     FormsModule,
     HttpClientModule,
     GaugeModule.forRoot(),
+    MatTabsModule,
+    MatIconModule,
   ],
   providers: [
     {
