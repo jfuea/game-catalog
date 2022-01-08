@@ -1,7 +1,15 @@
 .filters {
-    margin: 10px auto;
+    margin: 70px auto 10px auto;
     max-width: 1200px;
     padding-left: 20px;
+}
+
+.games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
 .game {
@@ -19,6 +27,13 @@
         box-shadow: 4px 3px 11px 6px rgb(200 152 200 / 0.5);
     }
 
+    &-thumb-container {
+        background-color: var(--color-tertiary);
+        position: relative;
+        height: 172px;
+        color: var(--color-text);
+        text-align: center;
+    }
     &-thumbnail {
         position: relative;
         top: 0;
@@ -43,10 +58,15 @@
         margin-bottom: 20px;
         white-space: nowrap;
         text-overflow: ellipsis;
-        // overflow: hidden;
+        overflow: hidden;
+    }
+
+    &-platforms {
+        display: flex;
     }
 
     &-platform {
         width: 20px;
+        margin-right: 10px;
     }
 }
