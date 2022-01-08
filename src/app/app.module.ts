@@ -18,6 +18,7 @@ import { GaugeModule } from 'angular-gauge';
 import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatIconModule } from "@angular/material/icon";
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MatIconModule } from "@angular/material/icon";
     GaugeModule.forRoot(),
     MatTabsModule,
     MatIconModule,
+    MatPaginatorModule,
   ],
   providers: [
     {

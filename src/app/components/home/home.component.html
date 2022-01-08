@@ -1,14 +1,14 @@
 <div class="filters">
     <mat-form-field>
         <mat-label>Sort</mat-label>
-        <mat-select [(ngModel)]="sort" (selectionChange)="searchGames(sort)">
+        <mat-select [(ngModel)]="sort" (selectionChange)="onSortChange(sort)">
             <mat-option value="name">Name</mat-option>
-            <mat-option value="-released">Released</mat-option>
-            <mat-option value="-added">Added</mat-option>
-            <mat-option value="-created">Created</mat-option>
-            <mat-option value="-rating">Rating</mat-option>
+            <mat-option value="-released">Latest Released</mat-option>
+            <mat-option value="-added">Latest added</mat-option>
+            <mat-option value="-created">Latest Created</mat-option>
+            <mat-option value="rating">Top rated games</mat-option>
             <mat-option value="metacritic">Metacritic</mat-option>
-
+            <mat-option value="">Popular</mat-option>
         </mat-select>
     </mat-form-field>
 </div>
@@ -32,3 +32,11 @@
         </div>
     </ng-container>
 </div>
+<mat-paginator
+    [showFirstLastButtons]="true"
+    [length]="countOfGames"
+    [pageSize]="games.length || 0"
+    [hidePageSize]="true"
+    [pageIndex]="pageIndex"
+    (page)="onPageChange($event)">
+></mat-paginator>
